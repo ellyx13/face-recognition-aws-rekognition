@@ -25,6 +25,7 @@ Then, navigate to the project directory:
 cd face-recognition-aws-rekognition
 ```
 # AWS Setup
+Before starting, open the config.py file and replace the values ​​you want. These values ​​will be used throughout the setup process to avoid confusion.
 ## Step 1: Install AWS CLI
 If you haven't installed AWS CLI yet, you can install it in [here.](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
 ## Step 2: Configure AWS CLI
