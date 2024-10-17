@@ -8,5 +8,6 @@ S3_BUCKET_NAME = "face-recognition-bucket"
 DYNAMODB_TABLE_NAME = "face_metadata"
 
 IAM_ROLE_NAME = "face_recognition_role"
+IAM_POLICY_NAME = "face_recognition_policy"
 
 LAMBDA_NAME = "face_recognition_lambda"

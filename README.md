@@ -133,7 +133,7 @@ You should see output similar to this:
 ## Step 8: Attach Inline Policy to the Role
 Replace your s3 bucket name and your arn dynamodb table (The value of the TableArn field in the DynamoDB creation step) in file rekognition-inline-policy.json, then run this command:   
 ```bash
-aws iam put-role-policy --role-name <IAM_ROLE_NAME> --policy-name RekognitionInlinePolicy --policy-document file://rekognition-inline-policy.json
+aws iam put-role-policy --role-name <IAM_ROLE_NAME> --policy-name <IAM_POLICY_NAME> --policy-document file://rekognition-inline-policy.json
 ```
 
 ## Step 9: Create lambda function
@@ -192,6 +192,17 @@ This is a simple face recognition application that uses the AWS Rekognition API 
 
 2. Check face: You can check if a person's face is in the Rekognition collection by take a picture via webcam. The application will compare the uploaded image with the faces in the s3 collection and display the result.
 ![alt text](images/check_face.png)
+
+# Delete resources on AWS
+To delete all resources created in the AWS setup, you can run the following commands:
+```bash
+aws rekognition delete-collection --collection-id <REKOGNITION_COLLECTION_NAME>
+aws s3 rb s3://<S3_BUCKET_NAME> --force
+aws dynamodb delete-table --table-name <DYNAMODB_TABLE_NAME>
+aws iam delete-role-policy --role-name <IAM_ROLE_NAME> --policy-name <IAM_POLICY_NAME>
+aws iam delete-role --role-name <IAM_ROLE_NAME>
+aws lambda delete-function --function-name <LAMBDA_NAME>
+```
 
 # Acknowledgments
 I would like to express my gratitude to Vijayaraghavan Vashudevan for his excellent article, [Build your own Face Recognition Service using Amazon Rekognition](https://medium.com/cloudnloud/build-your-own-face-recognition-service-using-amazon-rekognition-c75919d7f66e). This blog post was an invaluable resource for the development of this project, providing clear and actionable insights into setting up an AWS Rekognition-based face recognition system. Thank you for sharing such a detailed and helpful guide.
