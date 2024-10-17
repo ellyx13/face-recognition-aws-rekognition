@@ -166,7 +166,7 @@ quit_button.grid(row=3, column=0, padx=100, pady=20)
 
 # Add an image placeholder (currently no actual image loading functionality)
 # Load the image 
-image = PhotoImage(file="icon.png")
+image = PhotoImage(file="images/icon.png")
 # Create a label to display the image
 image_label = tk.Label(root, image=image)
 image_label.grid(row=0, column=2, padx=0, pady=80)
